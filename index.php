@@ -21,7 +21,8 @@ if ($httpcode != '200'){
     $dateGold->setTimezone(new DateTimeZone('Asia/Kuala_Lumpur'));
     $dateGold = $dateGold->format('d-m-Y H:i:s');
     
-    $priceGold = number_format((float)str_replace(' ', '.', $datamatch[1][4]), 2, '.', '');
+    $priceGold = number_format(((float)str_replace(' ', '', $datamatch[1][4]))*0.001, 2, '.', '');
+    $priceGoldSell = number_format(((float)str_replace(' ', '', $datamatch[1][3]))*0.001, 2, '.', '');
     
     echo 'Last Update '. $dateGold;
     echo '<br>';
